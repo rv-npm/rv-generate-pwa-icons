@@ -1,0 +1,27 @@
+{
+  "name": "rv-generate-pwa-icons",
+  "version": "1.0.0",
+  "description": "Generate icons for your PWA",
+  "main": "index.js",
+  "bin": "./cli.js",
+  "scripts": {
+    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rv-npm/rv-generate-pwa-icons.git"
+  },
+  "keywords": [
+    "pwa",
+    "icons"
+  ],
+  "author": "Vighnesh Raut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rv-npm/rv-generate-pwa-icons/issues"
+  },
+  "homepage": "https://github.com/rv-npm/rv-generate-pwa-icons#readme",
+  "dependencies": {
+    "await-exec": "^0.1.2"
+  }
+}
